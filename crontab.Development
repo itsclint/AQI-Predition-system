@@ -1,3 +1,13 @@
-* * * * * /usr/scheduler/jobs/GetAirData.py
+#30 * * * * /usr/scheduler/jobs/GetAirData.py
+
+@reboot /usr/scheduler/jobs/get_currentdata.py >> /var/log/cron.log 2>&1
+
+
+0 */6 * * * /usr/scheduler/jobs/get_currentdata.py >> /var/log/cron.log 2>&1
+
+
+# Run the job at 6am, 12pm and 6pm every day
+0 6,18 * * * /usr/scheduler/jobs/get_currentdata.py >> /var/log/cron.log 2>&1
+
 
 

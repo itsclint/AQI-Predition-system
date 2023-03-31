@@ -15,7 +15,7 @@ ENV PYTHONUNBUFFERED=1
 
 # Install Python packages using pip
 RUN python3 -m ensurepip --upgrade
-RUN pip3 install colorama requests python_dotenv
+RUN pip3 install colorama requests python_dotenv SQLAlchemy psycopg2-binary
 RUN /usr/bin/python3 -m pip install --upgrade pip
 RUN pip3 install numpy
 RUN pip3 install Pandas
