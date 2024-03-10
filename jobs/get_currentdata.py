@@ -7,6 +7,9 @@ import psycopg2
 import pandas as pd
 import psycopg2.extras as extras
 from sqlalchemy import create_engine
+from dotenv import load_dotenv
+
+load_dotenv() 
 
 
 #### inserts data into table
@@ -52,7 +55,7 @@ result = cursor.fetchall();
 data = pd.DataFrame(result, columns=['coord_key', "city_name", "province", "country", "latitude", "longitude"])
 
 # API key
-API_KEY = "bc83258f0da0d1c1f4bdbf5b54261172"
+API_KEY = os.get("API_KEY")
 
 df = pd.DataFrame(
     columns=['dt', 'co', 'no', 'no2', 'o3', 'so2', 'pm2_5', 'pm10', 'nh3', 'aqi', 'lon', 'lat', 'coord_key'])
